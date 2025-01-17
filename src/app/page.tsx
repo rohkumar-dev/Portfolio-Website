@@ -101,6 +101,7 @@ export default function Home() {
         <Projects range={[1, 1]} />
       </RevealFx>
       {routes["/blog"] && (
+        <div style={{borderBottom: "1px solid #e0e0e0", width: "90%"}}>
         <Flex fillWidth gap="24" mobileDirection="column">
           <Flex flex={1} paddingLeft="l">
             <Heading as="h2" variant="display-strong-xs" wrap="balance">
@@ -111,6 +112,7 @@ export default function Home() {
             <Posts range={[1, 2]} columns="2" />
           </Flex>
         </Flex>
+        </div>
       )}
       <Projects range={[2]} />
       {newsletter.display && <Mailchimp newsletter={newsletter} />}
