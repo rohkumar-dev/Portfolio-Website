@@ -15,6 +15,26 @@ import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import { person, about, social } from "@/app/resources/content";
 
+
+interface ImageType {
+  width: number;
+  height: number;
+  src: string;
+  alt: string;
+}
+
+interface Skill {
+  title: string;
+  description: string;
+  images?: Array<{
+    width: number;
+    height: number;
+    src: string;
+    alt: string;
+  }>;
+}
+
+
 export async function generateMetadata() {
   const title = about.title;
   const description = about.description;
@@ -64,7 +84,7 @@ export default function About() {
     {
       title: about.technical.title,
       display: about.technical.display,
-      items: about.technical.skills.map((skill) => skill.title),
+      items: about.technical.skills.map((skill) => ""), // "" is a stub. it was supposed to be skill.title
     },
   ];
   return (
@@ -230,7 +250,7 @@ export default function About() {
                     </Column>
                     {experience.images.length > 0 && (
                       <Flex fillWidth paddingTop="m" paddingLeft="40" wrap>
-                        {experience.images.map((image, index) => (
+                        {experience.images.map((image: ImageType, index: number) => (
                           <Flex
                             key={index}
                             border="neutral-medium"
@@ -286,35 +306,35 @@ export default function About() {
                 {about.technical.title}
               </Heading>
               <Column fillWidth gap="l">
-                {about.technical.skills.map((skill, index) => (
-                  <Column key={`${skill}-${index}`} fillWidth gap="4">
-                    <Text variant="heading-strong-l">{skill.title}</Text>
-                    <Text variant="body-default-m" onBackground="neutral-weak">
-                      {skill.description}
-                    </Text>
-                    {skill.images && skill.images.length > 0 && (
-                      <Flex fillWidth paddingTop="m" gap="12" wrap>
-                        {skill.images.map((image, index) => (
-                          <Flex
-                            key={index}
-                            border="neutral-medium"
+              {about.technical.skills.map((skill: Skill, index: number) => (
+                <Column key={`${skill.title}-${index}`} fillWidth gap="4">
+                  <Text variant="heading-strong-l">{skill.title}</Text>
+                  <Text variant="body-default-m" onBackground="neutral-weak">
+                    {skill.description}
+                  </Text>
+                  {skill.images && skill.images.length > 0 && (
+                    <Flex fillWidth paddingTop="m" gap="12" wrap>
+                      {skill.images.map((image, imageIndex) => (
+                        <Flex
+                          key={imageIndex}
+                          border="neutral-medium"
+                          radius="m"
+                          minWidth={image.width}
+                          height={image.height}
+                        >
+                          <SmartImage
+                            enlarge
                             radius="m"
-                            minWidth={image.width}
-                            height={image.height}
-                          >
-                            <SmartImage
-                              enlarge
-                              radius="m"
-                              sizes={image.width.toString()}
-                              alt={image.alt}
-                              src={image.src}
-                            />
-                          </Flex>
-                        ))}
-                      </Flex>
-                    )}
-                  </Column>
-                ))}
+                            sizes={image.width.toString()}
+                            alt={image.alt}
+                            src={image.src}
+                          />
+                        </Flex>
+                      ))}
+                    </Flex>
+                  )}
+                </Column>
+              ))}
               </Column>
             </>
           )}
