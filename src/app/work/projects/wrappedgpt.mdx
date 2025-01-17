@@ -1,0 +1,93 @@
+---
+title: "WrappedGPT, An AI Powered Song Recommendation Website Spotify API (in progress)"
+publishedAt: "2025-01-01"
+summary: "A Spotify-connected web application showcasing users' top artists and songs, powered by collaborative filtering for personalized recommendations. Features seamless Spotify OAuth integration, dynamic data visualization, and a responsive UI for an engaging user experience. Built with a focus on modular architecture, API efficiency, and scalability to support future enhancements."
+images:
+  - "/images/projects/wrappedgpt/landing-screenshot.png"
+  - "/images/projects/wrappedgpt/screenshot.png"
+link: "https://github.com/rohkumar-dev/wrappedgpt"
+---
+
+# WrappedGPT
+
+WrappedGPT is a Spotify-connected web application that provides users with a personalized music discovery experience. It showcases the user's top tracks and artists while leveraging collaborative filtering and advanced recommendation techniques to suggest new music tailored to their unique listening habits. With a dynamic, responsive interface and scalable architecture, WrappedGPT is designed to be both engaging and extensible for future enhancements.
+
+## Features
+
+- **Top Tracks and Artists Analysis**  
+  Explore your top 100 tracks and artists across multiple time frames:
+  - **Short Term**: Data from the past 4 weeks.
+  - **Medium Term**: Data from the past 3 months.
+  - **Long Term**: Data from the past several years.
+  
+- **Personalized Music Recommendations**  
+  - Utilizes collaborative filtering algorithms to suggest new tracks and artists based on patterns across users with similar listening habits.
+  - Combines collaborative filtering with advanced AI models, such as GPT-based systems, to generate diverse and unique recommendations.
+  - Displays recommendations with album covers and direct Spotify links for a seamless user experience.
+
+- **Advanced Recommendation Techniques**  
+  - **Collaborative Filtering**: Analyzes user preferences and interactions to identify and recommend content liked by similar listeners.
+  - **Hybrid Recommendation Models**: Integrates collaborative filtering with content-based methods, leveraging metadata such as genres, moods, and popularity to enhance recommendations.
+  - **Dynamic Filtering Options**: Toggle between artists and tracks or refine recommendations across time frames for more personalized results.
+
+- **Interactive and Intuitive Interface**  
+  - Aesthetic, responsive UI optimized for both desktop and mobile devices.
+  - Seamless navigation between different tabs and categories for an engaging user experience.
+
+- **Data Privacy and Control**  
+  - Recommendations powered by collaborative filtering are handled within the app and require no external data sharing.
+  - The GPT-based recommendation feature is optional. Data is only sent to OpenAI when explicitly initiated by the user.
+
+## Usage
+
+1. **Log in with Spotify**  
+   - Authenticate your Spotify account through the app’s secure login process.
+
+2. **Explore Your Listening Data**  
+   - View your top 100 tracks categorized by Short, Medium, and Long Term time frames.
+   - Switch to the "Artists" tab to explore your most-listened-to artists over the same periods.
+
+3. **Generate Personalized Recommendations**  
+   - Navigate to the "Recommendations" tab to receive song and artist suggestions.
+   - Use collaborative filtering to get recommendations based on user patterns.
+   - Optionally, click the "Generate Recommendations" button to utilize GPT-powered suggestions. Results are displayed with album covers and Spotify links.
+
+4. **Refine Your Experience**  
+   - Toggle between time frames and categories to further tailor your recommendations.
+
+## Architecture and Design
+
+- **Scalable and Modular Design**  
+  The app is built with a focus on performance optimization and extensibility, enabling easy addition of new features and integrations.
+
+- **Collaborative Filtering Engine**  
+  - Implements user-item interaction matrices and matrix factorization techniques for robust recommendation generation.
+  - Designed for efficient handling of large datasets and quick processing of recommendations.
+
+- **Hybrid Model Integration**  
+  Combines collaborative filtering with content-based techniques to enhance recommendation quality and diversity.
+
+## Future Plans
+
+- **Public Deployment**  
+  WrappedGPT is currently restricted to select users due to Spotify's access limitations. Upon approval, the app will be made publicly available.
+
+- **Expanded Features**  
+  - Integration with additional streaming platforms.
+  - Support for creating collaborative playlists and sharing recommendations.
+  - Real-time insights and recommendations during music playback.
+
+- **Enhanced AI Capabilities**  
+  - Incorporate deep learning models for advanced personalization.
+  - Improve GPT-powered recommendations to include contextual suggestions based on user input.
+
+## Learn More
+
+If you're interested in building a similar project, check out the following resources:
+
+- [Spotify Web API Documentation](https://developer.spotify.com/documentation/web-api/)
+- [Medium Blog Post on Song Recommendations](https://medium.com/@rohankumar_75589/using-chatgpt-to-recommend-songs-based-on-your-listening-history-1f73100309ad)
+
+---
+
+**Enjoy exploring your music preferences and discovering new favorites with WrappedGPT!**
