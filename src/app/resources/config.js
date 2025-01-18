@@ -23,7 +23,7 @@ const style = {
   solidStyle: "flat", // flat | plastic
   border: "rounded", // rounded | playful | conservative
   surface: "filled", // filled | translucent
-  transition: "micro", // all | micro | macro
+  transition: "macro", // all | micro | macro
 };
 
 const effects = {
